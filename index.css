@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#1f1614] text-[#f7f5f4] m-0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1f1614; 
+}
+::-webkit-scrollbar-thumb {
+  background: #543d36; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d97706; 
+}
+
+#root:empty::before {
+  content: 'Starting Global Coffee House...';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: serif;
+  font-size: 1.5rem;
+  color: #f59e0b;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

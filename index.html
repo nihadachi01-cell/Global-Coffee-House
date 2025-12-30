@@ -4,75 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Global Coffee House</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS processed by PostCSS/Tailwind during build -->
+    <link rel="stylesheet" href="./index.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              coffee: {
-                50: '#f7f5f4',
-                100: '#e7e3df',
-                200: '#d0c6bf',
-                300: '#b29f93',
-                400: '#967b6b',
-                500: '#806456',
-                600: '#674d42',
-                700: '#543d36',
-                800: '#46332e',
-                900: '#3b2c29',
-                950: '#1f1614',
-              },
-              gold: {
-                400: '#fbbf24',
-                500: '#f59e0b',
-                600: '#d97706',
-              }
-            },
-            fontFamily: {
-              serif: ['"Playfair Display"', 'serif'],
-              sans: ['"Lato"', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        background-color: #1f1614; /* coffee-950 */
-        color: #f7f5f4;
-        margin: 0;
-      }
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #1f1614; 
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #543d36; 
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #d97706; 
-      }
-      #root:empty::before {
-        content: 'Starting Global Coffee House...';
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        font-family: serif;
-        font-size: 1.5rem;
-        color: #f59e0b;
-      }
-    </style>
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
     "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
