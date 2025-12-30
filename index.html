@@ -42,6 +42,7 @@
       body {
         background-color: #1f1614; /* coffee-950 */
         color: #f7f5f4;
+        margin: 0;
       }
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
@@ -57,16 +58,27 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #d97706; 
       }
+      #root:empty::before {
+        content: 'Starting Global Coffee House...';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: serif;
+        font-size: 1.5rem;
+        color: #f59e0b;
+      }
     </style>
   <script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6"
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
 </script>

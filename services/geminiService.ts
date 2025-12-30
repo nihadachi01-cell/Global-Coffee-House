@@ -1,13 +1,11 @@
 import { GoogleGenAI } from "@google/genai";
 import { PRODUCTS } from "../constants";
 
-// Initialize the API client
-// Note: In a real production app, ensure API keys are secured via backend proxies.
-const apiKey = process.env.API_KEY || ''; 
-const ai = new GoogleGenAI({ apiKey });
+// Initialize the API client strictly according to guidelines
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
 
 export const generateCoffeeRecommendation = async (userQuery: string, chatHistory: {role: string, parts: {text: string}[]}[] = []) => {
-  if (!apiKey) {
+  if (!process.env.API_KEY) {
     return "I'm sorry, I cannot connect to the coffee knowledge base right now (API Key missing).";
   }
 
@@ -33,7 +31,8 @@ export const generateCoffeeRecommendation = async (userQuery: string, chatHistor
   `;
 
   try {
-    const model = 'gemini-2.5-flash';
+    // Using gemini-3-flash-preview for the best speed/accuracy balance in chat
+    const model = 'gemini-3-flash-preview';
     
     // Construct history for context
     const history = chatHistory.map(msg => ({

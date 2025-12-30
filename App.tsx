@@ -54,16 +54,23 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
+      {/* Deployment Test Banner */}
+      <div className="bg-blue-600 text-white text-center py-2 text-sm font-bold z-[60] relative">
+        Deployment Test Successful! Global Coffee House is Live.
+      </div>
+      
       <div className="min-h-screen bg-stone-950 text-stone-100 font-sans selection:bg-gold-500 selection:text-white">
         <Navbar cart={cart} onOpenCart={() => setIsCartOpen(true)} />
         
-        <Routes>
-          <Route path="/" element={<Home onAddToCart={addToCart} />} />
-          <Route path="/shop" element={<Shop onAddToCart={addToCart} />} />
-          <Route path="/product/:id" element={<ProductDetails onAddToCart={addToCart} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home onAddToCart={addToCart} />} />
+            <Route path="/shop" element={<Shop onAddToCart={addToCart} />} />
+            <Route path="/product/:id" element={<ProductDetails onAddToCart={addToCart} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
         
         <Footer />
         
